@@ -27,8 +27,11 @@ function Aside() {
             <div className='cont-buttons3'>
                 <span>
                     <input placeholder='Search here'></input>
-                    <button className='btn'>Go</button>
+                    <button className='btn-go'>Go</button>
                 </span>
+            </div>
+            <div className='cont-footer'>
+                <p>Developed by Marianne Teixidó</p>
             </div>
         </div>
     );
