@@ -1,0 +1,120 @@
+.container {
+    position: absolute;
+    width: 25rem;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 25%;
+    left: 0;
+    border: 3px solid #000000;
+}
+
+.cont-title {
+    position: absolute;
+    width: 25rem;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000;
+    background: #B3D962;
+    top: 2.5%;
+}
+
+.title{
+    position: absolute;
+    color: #000;
+    font-family: Inter;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.68px;
+}
+
+
+.cont-sort {
+    position: absolute;
+    width: 25rem;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000;
+    background: #B3D962;
+    top: 49.5%;
+}
+
+.cont-search {
+    position: absolute;
+    width: 25rem;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000;
+    background: #B3D962;
+    top: 76%;
+}
+
+/*------Button Style------*/
+
+.cont-buttons {
+    position: absolute;
+    width: 25rem;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 3px solid #000;
+    background: #ffffff;
+    top: 9.5%;
+}
+.cont-buttons2 {
+    position: absolute;
+    width: 25rem;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 3px solid #000;
+    background: #ffffff;
+    top: 56%;
+}
+
+.cont-buttons3 {
+    position: absolute;
+    width: 25rem;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    border: 3px solid #000;
+    background: #ffffff;
+    top: 82.5%;
+}
+
+.btn {
+    border: 3px solid #000;
+    fill: #FFF;
+    border-radius: 25px;
+}
+
+
+input {
+    padding: 0.5vw;
+    margin: 10px;
+    border: 3px solid #000000;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 0.8vw;
+    text-align: center;
+
+}
+ 

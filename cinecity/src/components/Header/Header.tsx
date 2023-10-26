@@ -3,6 +3,7 @@ import logo from '../../assets/logo.png';
 
 
 const Header = () => {
+    
     return (
         <section className='header'>
             <div className='logo-div'>

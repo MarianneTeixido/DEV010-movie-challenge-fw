@@ -1,33 +1,38 @@
-
-function Aside({ filters, selectedFilter, onFilterChange, sortOptions, selectedSort, onSortChange }) {
+import './Aside.css';
+function Aside() {
     return (
-        <aside>
-            <div>
-                <h2>Filter by:</h2>
-                {filters.map(filter => (
-                    <button
-                        key={filter}
-                        onClick={() => onFilterChange(filter)}
-                        className={selectedFilter === filter ? 'selected' : ''}
-                    >
-                        {filter}
-                    </button>
-                ))}
+        <div className="container">
+            <div className='cont-title'>
+                <h3 className="title">Filter</h3>
             </div>
-            <div>
-                <h2>Sort by:</h2>
-                {sortOptions.map(option => (
-                    <button
-                        key={option.value}
-                        onClick={() => onSortChange(option.value)}
-                        className={selectedSort === option.value ? 'selected' : ''}
-                    >
-                        {option.label}
-                    </button>
-                ))}
+            <div className='cont-buttons'>
+                <button className='btn'>Docs</button>
+                <button className='btn'>Music</button>
+                <button className='btn'>Animation</button>
+                <button className='btn'>Drama</button>
+                <button className='btn'>Sci-fy</button>
+                <button className='btn'>History</button>
             </div>
-        </aside>
+            <div className='cont-sort'>
+                <h3 className="title">Sort by</h3>
+            </div>
+            <div className='cont-buttons2'>
+                <button className='btn'>Title A-Z</button>
+                <button className='btn'>Title A-Z</button>
+                <button className='btn'>Popularity</button>
+            </div>
+            <div className='cont-search'>
+                <h3 className="title">Search</h3>
+            </div>
+            <div className='cont-buttons3'>
+                <span>
+                    <input placeholder='Search here'></input>
+                    <button className='btn'>Go</button>
+                </span>
+            </div>
+        </div>
     );
 }
 
 export default Aside;
+//discover-gender  numero pasar como string
