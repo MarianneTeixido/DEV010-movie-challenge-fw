@@ -1,17 +1,24 @@
 
-import Aside from '../Aside/Aside';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import AsideComponent from '../Aside/Aside';
+import HeaderComponent from '../Header/Header';
+import Movies from '../Movies/Movies';
+import FooterComponent from '../Footer/Footer';
 import './Home.css';
 
+
+
+
+
 export default function Home() {
+ 
+
     return (
         <main>
-            <Aside />
+            <AsideComponent />
             <div>
-                <Header />
-                {/* <Movies /> */}
-                <Footer />
+                <HeaderComponent />
+                <Movies  />
+                <FooterComponent />
             </div>
         </main>
     );
