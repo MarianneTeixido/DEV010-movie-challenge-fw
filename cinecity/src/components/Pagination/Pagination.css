@@ -1,0 +1,33 @@
+
+.pagination {
+    position: absolute;
+    width: 85.1%;
+    height: 4.8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    right: 0;
+    border: 3px solid #000;
+ 
+}
+
+
+.contpage{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    margin-top:30px;
+   
+}
+.btn-page {
+    border: 3px solid #000;
+    fill: #FFF;
+    border-radius: 25px;
+    width: 5%;
+}
+
+.btn-page:hover{
+    background-color: #000; 
+    color: #fff; 
+}

@@ -10,12 +10,7 @@ function App() {
       path:"/",
       element: <Home />,
       errorElement:<ErrorPage />,
-      // children: [
-      //   {
-      //     path: '/movie',
-      //     element: <Movie/>
-      //   },
-      // ]
+      // path;"/movie/:id", //rescatar el id del componente
     },
   ]);
   return (
