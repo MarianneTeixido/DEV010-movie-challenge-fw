@@ -30,18 +30,16 @@ function Pagination({ page, setCurrentPage }: PaginationProps) {
             {page === 1 && (
                 <>
                     <div className='contpage'>
-                        <span>
                             <button className='btn-page' onClick={handleNextPage}>  &#62;&#62;  </button>
-                        </span>
+                            <button className='btn-page' onClick={handleLastPage}> &#62;&#124;  </button>
                     </div>
                 </>
             )}
             {page === 500 && (
                 <>
                     <div className='contpage'>
-                        <span>
+                            <button className='btn-page' onClick={handleFirstPage}>  &#124;&#60;  </button>
                             <button className='btn-page' onClick={handlePreviousPage}>  &#60;&#60;  </button>
-                        </span>
                     </div>
                 </>
             )}
