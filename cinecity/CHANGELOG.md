@@ -9,6 +9,7 @@ Manejo de eventos controlando la funcionalidad de la API
 ### Added
 
 Se agregó la paginación
+Cambios en  el  CSS  de  las  películas. 
 
 ### Changed
 
@@ -52,7 +53,7 @@ Niguno
 
 ### Sprint learnings
 
-- Segundo spring
+- Primer spring
 Creación de componentes usando REACT
 
 ### Added
