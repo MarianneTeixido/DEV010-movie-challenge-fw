@@ -1,5 +1,5 @@
 
-.footer {
+.pagination {
     position: absolute;
     width: 85.1%;
     height: 4.8vh;
@@ -25,5 +25,9 @@
     fill: #FFF;
     border-radius: 25px;
     width: 5%;
+}
 
+.btn-page:hover{
+    background-color: #000; 
+    color: #fff; 
 }

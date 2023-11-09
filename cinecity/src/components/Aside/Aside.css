@@ -105,6 +105,13 @@
     fill: #FFF;
     border-radius: 25px;
     width: 30%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover{
+    background-color: #000; 
+    color: #fff; 
 }
 
 .btn-go {
@@ -113,6 +120,10 @@
     border-radius: 20px;
 }
 
+.btn-go:hover{
+    background-color: #000; 
+    color: #fff; 
+}
 
 input {
     padding: 0.3vw;

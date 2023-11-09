@@ -1,7 +1,7 @@
 import './Aside.css';
 function Aside() {
     return (
-        <div className="container">
+        <aside className="container">
             <div className='cont-title'>
                 <h3 className="title">Filter</h3>
             </div>
@@ -33,7 +33,7 @@ function Aside() {
             <div className='cont-footer'>
                 <p>Developed by Marianne Teixidó</p>
             </div>
-        </div>
+        </aside>
     );
 }
 

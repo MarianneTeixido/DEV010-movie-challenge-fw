@@ -1,79 +1,52 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
-import "./Movies.css"
+import { buildApiUrl, API_KEY } from '../../services/movie-request';
+import { Movie } from '../../services/types';
+import Pagination from '../Pagination/Pagination';
+import "./Movies.css";
+import "../Pagination/Pagination.css";
+import { Link } from 'react-router-dom';
+
+
+
 function Movies() {
     console.log('renderizando movies')
     //movies es la data
-    const [movies, setMovies] = useState<any[]>([]);
+    const [movies, setMovies] = useState<Movie[]>([]);
+    const [currentPage, setCurrentPage] = useState<number>(1);
 
     //Permite hacer la petición HTTP
     useEffect(() => {
-    
+
+        const apiUrl = buildApiUrl(currentPage);
+
         const options = {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMmVkNTM4ZjM1ZGM1ZTg1YjQ5ZmIxNzY0ZWVjOWFiNyIsInN1YiI6IjY1MzE1NWQ3YWVkZTU5MDEyYjMxOTEzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ofkUDzjvsajBgmO4rJ78Sea0ge-s5fhc5g8abkDBGSo'
+                Authorization: API_KEY,
             }
         };
-        // fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options)
-        fetch("https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=en-US&page=1&sort_by=popularity.desc", options)
+        fetch(apiUrl, options)
             .then((response) => response.json())
             .then((movies) => setMovies(movies.results));
-    }, []);
- 
-    return (
+    }, [currentPage]);
 
-        <div  >
-            {movies ? (<ul className='grid-movies' >{movies.map((results) =>
-                <li>
-                    {results.title}
-                </li>
-            )}</ul>) : 'no hay película'}
-        </div>
+    return (
+        <>
+            <section className='container-movies'  >
+                {movies.map((movie: Movie, i: number) =>
+                    <div className='movie-item' key={i}>
+                        <Link to={`/movie/${movie.id}`}>
+                        <img className='img' src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`} alt={movie.original_title} />
+                        </Link>
+                        <h3>{movie.title}</h3>
+                        <p>{new Date(movie.release_date).getFullYear()}</p>
+                    </div>
+                )}
+            </section>
+            <Pagination page={currentPage} setCurrentPage={setCurrentPage} />
+        </>
     )
 }
 
 export default Movies;
-
-
-// return (
-
-//     <div  >
-//         {movies ? (<ul className='grid-movies' >{movies.map((results) =>
-//             <li>
-//                 {results.title}
-//             </li>
-//         )}</ul>) : 'no hay película'}
-//     </div>
-// )
-
-// import { Movie } from "../../services/movie-request";
-// import "./Movies.css";
-
-
-// interface MoviesProps {
-//     movies: Movie[];
-// }
-
-// function MoviesDisplay({ movies }: MoviesProps) {
-//     return (
-//         <section className="grid-container">
-//             {movies.map((movie: Movie, i: number) => (
-//                 <div className="grid-item" key={i}>
-//                     <img
-//                         className="img-movie"
-//                         src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
-//                         alt={movie.original_title}
-//                     />
-//                     <h3 className="title-movie">{movie.title}</h3>
-//                     <p className="movie-date">
-//                         {new Date(movie.release_date).getFullYear()}
-//                     </p>
-//                 </div>
-//             ))}
-//         </section>
-//     );
-// }
-
-// export default MoviesDisplay; 

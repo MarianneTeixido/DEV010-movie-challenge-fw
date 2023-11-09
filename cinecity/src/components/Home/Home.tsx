@@ -2,7 +2,7 @@
 import AsideComponent from '../Aside/Aside';
 import HeaderComponent from '../Header/Header';
 import Movies from '../Movies/Movies';
-import FooterComponent from '../Footer/Footer';
+// import Pagination from '../Pagination/Pagination';
 import './Home.css';
 
 
@@ -18,7 +18,7 @@ export default function Home() {
             <div>
                 <HeaderComponent />
                 <Movies  />
-                <FooterComponent />
+                {/* <Pagination /> */}
             </div>
         </main>
     );

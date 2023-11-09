@@ -1,7 +1,8 @@
-import { userState } from 'react';
+import React from "react";
 import { createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Home from './components/Home/Home';
-import ErrorPage from './components/ErrorPage/error-page';
+import MovieDetail from './components/MovieDetail/MovieDetail.tsx';
+// import ErrorPage from './components/ErrorPage/error-page';
 import './App.css'
 
 function App() {
@@ -9,14 +10,11 @@ function App() {
     {
       path:"/",
       element: <Home />,
-      errorElement:<ErrorPage />,
-      // children: [
-      //   {
-      //     path: '/movie',
-      //     element: <Movie/>
-      //   },
-      // ]
     },
+    {
+      path:"/movie/:movId",
+      element: <MovieDetail />,
+    }
   ]);
   return (
     <RouterProvider router={rooter}/>
