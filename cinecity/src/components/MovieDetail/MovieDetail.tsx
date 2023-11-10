@@ -18,8 +18,7 @@ const MovieDetail = () => {
 
     if (!movie) {
         console.log('no movie');
-        return <p>Cargando...</p>; // Si "movie" es null, muestra "Cargando..."
-
+        return <p>Loading...</p>;
     }
 
     return (
@@ -31,25 +30,28 @@ const MovieDetail = () => {
                         className='img-detail'
                         src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
                         alt={movie.original_title} />
-                </section>
 
-                <section className='back-section'>
                     <Link to='/'>
                         <button className='back-btn'>Back</button>
                     </Link>
                 </section>
 
-                <div className='movie-detail-text'>
-                    <h1>{movie.original_title}</h1>
-                    <p>Release year: {movie.release_date}</p>
-                    {/* <p>Director</p> */}
-                    <p>Genre: {movie.genres.map((genre) => genre.name).join(', ')}</p>
-                    <p>Duration: {movie.runtime} minutes</p>
-                    <p>User Score: {movie.vote_average} </p>
-                    <p>Total Votes: {movie.vote_count}</p>
-                    <p>Overview:</p>
-                    <p>{movie.overview}</p>
-                </div>
+                <section className='movie-detail-text'>
+                    
+                        <h1 >{movie.original_title}</h1>
+                   
+                    <section className='info'>
+                        <p className='p-detail'><strong>Release year:</strong> {new Date(movie.release_date).getFullYear()}</p>
+                        <p className='p-detail'><strong>Genre:</strong> {movie.genres.map((genre) => genre.name).join(', ')}</p>
+                        <p className='p-detail'><strong>Duration:</strong> {movie.runtime} minutes</p>
+                        <p className='p-detail'><strong>User Score:</strong> {movie?.vote_average?.toFixed(2)}% </p>
+                        <p className='p-detail'><strong>Total Votes:</strong> {movie.vote_count}</p>
+                    </section>
+                    
+                        <p className='p-detail'><strong>Overview:</strong></p>
+                        <p className='p-detail'>{movie.overview}</p>
+                    
+                </section>
             </article>
         </>
     )

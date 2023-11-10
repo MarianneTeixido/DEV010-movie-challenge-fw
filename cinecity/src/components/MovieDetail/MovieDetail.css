@@ -1,13 +1,21 @@
 .movie-container {
     position: relative;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     display: flex;
     justify-content: center;
     align-content: center;
     width: 144%;
     height: 55vh;
-    top:130px;
+    top: 130px;
     right: 200px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
 }
 
 .img-detail {
@@ -17,11 +25,10 @@
 
 .back-btn {
     position: relative;
-    top: 700px;
     border: 3px solid #000;
     fill: #FFF;
     border-radius: 25px;
-    width: 150%;
+    width: 160%;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -29,4 +36,24 @@
 .back-btn:hover {
     background-color: #000;
     color: #fff;
+}
+
+.movie-detail-text {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 20px;;
+    padding-left: 50px;
+    text-align: start;
+}
+
+.info{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+.p-detail {
+    font-size: 1.9em;
 }
