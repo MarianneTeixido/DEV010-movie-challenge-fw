@@ -1,6 +1,5 @@
 .movie-container {
     position: relative;
-    /* background-color: blueviolet; */
     display: flex;
     justify-content: center;
     align-content: center;
@@ -51,8 +50,6 @@
     padding-top: 40px;
     padding-bottom: 40px;
 }
-
-
 
 .p-detail {
     font-size: 1.9em;
