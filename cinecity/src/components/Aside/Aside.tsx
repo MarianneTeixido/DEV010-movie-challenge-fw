@@ -1,17 +1,41 @@
 import './Aside.css';
-function Aside() {
+import { Genre } from '../../services/types';
+import { useEffect } from 'react';
+import { getGenres } from '../../services/genres-request';
+import { useFilterContext } from '../FilterContext/FilterContext';
+
+type AsideProps = {
+    setGenre: (genre: number) => void;
+    genre: number;
+};
+
+function Aside({ setGenre, genre }: AsideProps) {
+    const { appState, setAppState } = useFilterContext();
+
+    useEffect(() => {
+        getGenres(genre)
+            .then((genre: Genre[]) => {
+                setAppState((prevState) => ({
+                    ...prevState,
+                    genres: genre,
+                }));
+            })
+            .catch((error) => console.error(error));
+    }, [genre]);
+    const genreIds = [99, 10402, 16, 18, 878, 36];
     return (
         <aside className="container">
             <div className='cont-title'>
                 <h3 className="title">Filter</h3>
             </div>
             <div className='cont-buttons'>
-                <button className='btn'>Docs</button>
-                <button className='btn'>Music</button>
-                <button className='btn'>Animation</button>
-                <button className='btn'>Drama</button>
-                <button className='btn'>Sci-fy</button>
-                <button className='btn'>History</button>
+                {appState.genres?.filter((genre: Genre) => genreIds.includes(genre.id)).map(
+                    (genre: Genre, i: number) => (
+                        <button className='btn'
+                            onClick={() => { setGenre(genre.id); }} key={i}>
+                            {genre.name}
+                        </button>
+                    ))}
             </div>
             <div className='cont-sort'>
                 <h3 className="title">Sort by</h3>
@@ -38,4 +62,4 @@ function Aside() {
 }
 
 export default Aside;
-//discover-gender  numero pasar como string
+

@@ -16,8 +16,9 @@ function Movies() {
 
     //Permite hacer la petición HTTP
     useEffect(() => {
-
-        const apiUrl = buildApiUrl(currentPage);
+//buildApi debe de recibir el filtro por género
+        
+        const apiUrl = buildApiUrl(currentPage, 1);
 
         const options = {
             method: 'GET',

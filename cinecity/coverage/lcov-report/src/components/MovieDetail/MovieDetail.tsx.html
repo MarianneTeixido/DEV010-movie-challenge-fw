@@ -120,7 +120,9 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -143,7 +145,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,6 +167,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,8 +201,7 @@ const MovieDetail = <span class="fstat-no" title="function not covered" >() =&gt
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!movie) {</span>
 <span class="cstat-no" title="statement not covered" >        console.log('no movie');</span>
-<span class="cstat-no" title="statement not covered" >        return &lt;p&gt;Cargando...&lt;/p&gt;; /</span>/ Si "movie" es null, muestra "Cargando..."
-&nbsp;
+<span class="cstat-no" title="statement not covered" >        return &lt;p&gt;Loading...&lt;/p&gt;;</span>
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -210,25 +213,28 @@ const MovieDetail = <span class="fstat-no" title="function not covered" >() =&gt
                         className='img-detail'
                         src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
                         alt={movie.original_title} /&gt;
-                &lt;/section&gt;
 &nbsp;
-                &lt;section className='back-section'&gt;
                     &lt;Link to='/'&gt;
                         &lt;button className='back-btn'&gt;Back&lt;/button&gt;
                     &lt;/Link&gt;
                 &lt;/section&gt;
 &nbsp;
-                &lt;div className='movie-detail-text'&gt;
-                    &lt;h1&gt;{movie.original_title}&lt;/h1&gt;
-                    &lt;p&gt;Release year: {movie.release_date}&lt;/p&gt;
-                    {/* &lt;p&gt;Director&lt;/p&gt; */}
-                    &lt;p&gt;Genre: {movie.genres.map(<span class="fstat-no" title="function not covered" >(g</span>enre) =&gt; <span class="cstat-no" title="statement not covered" >genre.name)</span>.join(', ')}&lt;/p&gt;
-                    &lt;p&gt;Duration: {movie.runtime} minutes&lt;/p&gt;
-                    &lt;p&gt;User Score: {movie.vote_average} &lt;/p&gt;
-                    &lt;p&gt;Total Votes: {movie.vote_count}&lt;/p&gt;
-                    &lt;p&gt;Overview:&lt;/p&gt;
-                    &lt;p&gt;{movie.overview}&lt;/p&gt;
-                &lt;/div&gt;
+                &lt;section className='movie-detail-text'&gt;
+                    
+                        &lt;h1 &gt;{movie.original_title}&lt;/h1&gt;
+                   
+                    &lt;section className='info'&gt;
+                        &lt;p className='p-detail'&gt;&lt;strong&gt;Release year:&lt;/strong&gt; {new Date(movie.release_date).getFullYear()}&lt;/p&gt;
+                        &lt;p className='p-detail'&gt;&lt;strong&gt;Genre:&lt;/strong&gt; {movie.genres.map(<span class="fstat-no" title="function not covered" >(g</span>enre) =&gt; <span class="cstat-no" title="statement not covered" >genre.name)</span>.join(', ')}&lt;/p&gt;
+                        &lt;p className='p-detail'&gt;&lt;strong&gt;Duration:&lt;/strong&gt; {movie.runtime} minutes&lt;/p&gt;
+                        &lt;p className='p-detail'&gt;&lt;strong&gt;User Score:&lt;/strong&gt; {movie?.vote_average?.toFixed(2)}% &lt;/p&gt;
+                        &lt;p className='p-detail'&gt;&lt;strong&gt;Total Votes:&lt;/strong&gt; {movie.vote_count}&lt;/p&gt;
+                    &lt;/section&gt;
+                    
+                        &lt;p className='p-detail'&gt;&lt;strong&gt;Overview:&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p className='p-detail'&gt;{movie.overview}&lt;/p&gt;
+                    
+                &lt;/section&gt;
             &lt;/article&gt;
         &lt;/&gt;
     )
@@ -241,7 +247,7 @@ export default MovieDetail;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-09T17:54:47.667Z
+                at 2023-11-21T16:28:02.345Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

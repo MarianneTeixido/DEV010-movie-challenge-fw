@@ -1,3 +1,27 @@
+## <1.2.0> - <2023-11-15>
+
+### Sprint learnings
+
+- Cuarto spring
+Agregué la visualización de los componentes de MovieDetail y configuré el contexto para los filtros
+
+### Added
+
+Se agregó componente movie detail.
+Configuración para los test.
+
+### Changed
+
+El contexto para que se lean los filtros.
+
+### Fixed
+
+Ninguno
+
+### Removed
+
+Niguno
+
 ## <1.1.0> - <2023-11-7>
 
 ### Sprint learnings
