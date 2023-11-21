@@ -15,8 +15,8 @@ type FilterStateContextType = {
 
 const FilterContext = createContext<FilterStateContextType | null>(null);
 
-// Global variable
-const genreIds = [99, 10402, 16, 18, 878, 36];
+
+//const genreIds = [99, 10402, 16, 18, 878, 36];
 
 export const useFilterContext = () => {
     const context = useContext(FilterContext);

@@ -9,32 +9,25 @@ import { useFilterContext } from '../FilterContext/FilterContext';
 import './Home.css';
 import { useEffect } from 'react';
 import { getGenres } from '../../services/genres-request';
-import { Genre, Movie } from '../../services/types';
-
-
-type AsideProps = {
-    setGenre: (genre: number) => void;
-    genre: number;
-};
+import { Genre } from '../../services/types';
 
 
 export default function Home() {
-   const { appState, setAppState } = useFilterContext();
-
-   useEffect(() => {
+    const { appState, setAppState } = useFilterContext();
+    useEffect(() => {
         getGenres(appState.genre)
-        .then((genre:Genre[]) => {
-            setAppState((prevState) => ({
-                ...prevState,
-                genres: genre,
-            }));
-        })
-        .catch((error) => console.error(error));
-   }, [appState.genre]);
-   console.log("Estos son los géneros",appState.genres);
+            .then((genres: Genre[]) => { 
+                setAppState((prevState) => ({
+                    ...prevState,
+                    genres: genres, 
+                }));
+            })
+            .catch((error) => console.error(error));
+    }, [appState.genre]);
+    console.log("Estos son los géneros", appState.genres);
     return (
         <main>
-            <AsideComponent setGenre={(genre:number)=>{
+            <AsideComponent setGenre={(genre: number) => {
                 setAppState((prevState) => ({
                     ...prevState,
                     genre: genre,
@@ -43,8 +36,7 @@ export default function Home() {
             />
             <div>
                 <HeaderComponent />
-                <Movies  />
-                {/* <Pagination /> */}
+                <Movies />
             </div>
         </main>
     );
