@@ -1,3 +1,26 @@
+## <1.2.0> - <2023-11-22>
+
+### Sprint learnings
+
+- Quinto spring
+Create context
+
+### Added
+
+Se agregaron los filtros
+
+### Changed
+
+Ninguno
+
+### Fixed
+
+Ninguno
+
+### Removed
+
+Niguno
+
 ## <1.2.0> - <2023-11-15>
 
 ### Sprint learnings
