@@ -11,7 +11,8 @@ type FilterContextType = {
 type FilterStateContextType = {
     appState: FilterContextType;
     setAppState: Dispatch<SetStateAction<FilterContextType>>;
-  };
+    setCurrentPage: (page: number) => void;
+};
 
 const FilterContext = createContext<FilterStateContextType | null>(null);
 
@@ -38,8 +39,15 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
         genres: []
     });
 
+    const setCurrentPage = (page: number) => {
+        setAppState((prevState) => ({
+            ...prevState,
+            page: page
+        }));
+    }
+
     return (
-        <FilterContext.Provider value={{ appState, setAppState }}>
+        <FilterContext.Provider value={{ appState, setAppState, setCurrentPage }}>
             {children}
         </FilterContext.Provider>
     );

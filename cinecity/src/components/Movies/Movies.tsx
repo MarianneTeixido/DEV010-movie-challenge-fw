@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { buildApiUrl, API_KEY } from "../../services/movie-request";
+import { buildApiUrl, API_KEY, getMovie } from "../../services/movie-request";
 import { Movie } from "../../services/types";
 import Pagination from "../Pagination/Pagination";
 import "./Movies.css";
 import "../Pagination/Pagination.css";
 import { Link } from "react-router-dom";
+import { useFilterContext } from "../FilterContext/FilterContext";
+import { getGenres } from "../../services/genres-request";
+
 
 type MovieProps = {
   genreId: number;
@@ -12,15 +15,15 @@ type MovieProps = {
 
 function Movies({ genreId }: MovieProps) {
   console.log("renderizando movies");
-  //movies es la data
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+ // movies es la data
+   const [movies, setMovies] = useState<Movie[]>([]);
+   const { appState, setAppState } = useFilterContext();
 
   //Permite hacer la petición HTTP
   useEffect(() => {
     //buildApi debe de recibir el filtro por género
 
-    const apiUrl = buildApiUrl(currentPage, genreId);
+    const apiUrl = buildApiUrl(appState.page, genreId);
 
     const options = {
       method: "GET",
@@ -32,7 +35,7 @@ function Movies({ genreId }: MovieProps) {
     fetch(apiUrl, options)
       .then((response) => response.json())
       .then((movies) => setMovies(movies.results));
-  }, [currentPage, genreId]);
+  }, [appState.page, genreId]);
 
   return (
     <>
@@ -51,7 +54,7 @@ function Movies({ genreId }: MovieProps) {
           </div>
         ))}
       </section>
-      <Pagination page={currentPage} setCurrentPage={setCurrentPage} />
+      <Pagination />
     </>
   );
 }

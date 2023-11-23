@@ -1,12 +1,12 @@
+import { useFilterContext } from '../FilterContext/FilterContext';
 import './Pagination.css'
-import React, { Dispatch, SetStateAction } from 'react';
 
-interface PaginationProps {
-    page: number;
-    setCurrentPage: Dispatch<SetStateAction<number>>;
-}
+function Pagination() {
 
-function Pagination({ page, setCurrentPage }: PaginationProps) {
+    const { appState, setCurrentPage } = useFilterContext();
+
+    const { page } = appState;
+
 
     const handleFirstPage = () => {
         setCurrentPage(1);
