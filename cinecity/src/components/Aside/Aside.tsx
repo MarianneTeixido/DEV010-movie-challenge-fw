@@ -49,8 +49,8 @@ function Aside({ setGenre, genre }: AsideProps) {
         <h3 className="title">Sort by</h3>
       </div>
       <div className="cont-buttons2">
-        <button className="btn" onClick={() => sortMoviesByPopularity("popularity.asc")}>Popularity Asc &#8593;</button>
-        <button className="btn" onClick={() => sortMoviesByPopularity("popularity.desc")}>Popularity Desc &#8595;</button>
+      <button className="btn" onClick={() => sortMoviesByPopularity("popularity.desc")}>Popularity Desc &#8595;</button>
+      <button className="btn" onClick={() => sortMoviesByPopularity("popularity.asc")}>Popularity Asc &#8593;</button>
       </div>
       <div className="cont-search">
         <h3 className="title">Search</h3>
