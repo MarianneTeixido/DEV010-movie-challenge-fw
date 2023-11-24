@@ -9,7 +9,7 @@ type AsideProps = {
 };
 
 function Aside({ setGenre, genre }: AsideProps) {
-  const { appState, setAppState, setSelectedGenre, sortMoviesByPopularity } = useFilterContext();
+  const { appState, setAppState, sortMoviesByPopularity, setSelectedGenre, setSelectedSort } = useFilterContext();
 
   useEffect(() => {
     getGenres(genre)
@@ -49,8 +49,18 @@ function Aside({ setGenre, genre }: AsideProps) {
         <h3 className="title">Sort by</h3>
       </div>
       <div className="cont-buttons2">
-      <button className="btn" onClick={() => sortMoviesByPopularity("popularity.desc")}>Popularity Desc &#8595;</button>
-      <button className="btn" onClick={() => sortMoviesByPopularity("popularity.asc")}>Popularity Asc &#8593;</button>
+        <button 
+        className={appState.selectedSort === "popularity.desc" ? "btn clicked" : "btn"}       
+        onClick={() => {
+          sortMoviesByPopularity("popularity.desc");
+          setSelectedSort("popularity.desc");
+        }}>Popularity Desc &#8595;</button>
+        <button         
+        className={appState.selectedSort === "popularity.asc" ? "btn clicked" : "btn"}
+        onClick={() => {
+          sortMoviesByPopularity("popularity.asc");
+          setSelectedSort("popularity.asc");
+        }}>Popularity Asc &#8593;</button>
       </div>
       <div className="cont-search">
         <h3 className="title">Search</h3>

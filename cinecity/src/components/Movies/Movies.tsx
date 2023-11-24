@@ -14,14 +14,11 @@ type MovieProps = {
 
 function Movies({ genreId }: MovieProps) {
   console.log("renderizando movies");
- // movies es la data
-   const [movies, setMovies] = useState<Movie[]>([]);
-   const { appState } = useFilterContext();
 
-  //Permite hacer la petición HTTP
+   const { appState, setMovies } = useFilterContext();
+   const { movies } = appState;
+
   useEffect(() => {
-    //buildApi debe de recibir el filtro por género
-
     const apiUrl = buildApiUrl(appState.page, genreId, appState.sortBy);
 
     const options = {
@@ -55,6 +52,7 @@ function Movies({ genreId }: MovieProps) {
       </section>
       <Pagination />
     </>
+
   );
 }
 

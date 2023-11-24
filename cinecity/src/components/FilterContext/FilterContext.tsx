@@ -6,16 +6,22 @@ type FilterContextType = {
     page: number;
     genre: number;
     genres: Genre[];
-    selectedGenre: number | null;
     sortBy: string;
+
+    selectedGenre: number | null;
+    selectedSort: string;
 };
 
 type FilterStateContextType = {
     appState: FilterContextType;
     setAppState: Dispatch<SetStateAction<FilterContextType>>;
     setCurrentPage: (page: number) => void;
-    setSelectedGenre: (genre: number | null) => void;
     sortMoviesByPopularity: (order: string) => void;
+    setMovies: (movies: Movie[]) => void;
+
+    setSelectedGenre: (genre: number | null) => void;
+    setSelectedSort: (sort: string) => void;
+    
 };
 
 const FilterContext = createContext<FilterStateContextType | null>(null);
@@ -39,10 +45,18 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
         page: 1,
         genre: 0,
         genres: [],
+        sortBy: 'popularity.desc',
         selectedGenre: null,
-        sortBy: 'popularity.desc'
+        selectedSort: 'popularity.desc',
     });
 
+    const setMovies = (movies: Movie[]) => { 
+        setAppState((prevState) => ({
+            ...prevState,
+            movies: movies
+        }));
+    }
+    
     const sortMoviesByPopularity = (order: string) => { 
         setAppState((prevState) => ({
             ...prevState,
@@ -65,10 +79,17 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
         }));
     }
 
+    const setSelectedSort = (sort: string) => {
+        setAppState((prevState) => ({
+            ...prevState,
+            selectedSort: sort
+        }));
+    }
+   
 
 
     return (
-        <FilterContext.Provider value={{ appState, setAppState, setCurrentPage, setSelectedGenre, sortMoviesByPopularity }}>
+        <FilterContext.Provider value={{ appState, setAppState, setMovies,setCurrentPage, sortMoviesByPopularity, setSelectedGenre, setSelectedSort }}>
             {children}
         </FilterContext.Provider>
     );
