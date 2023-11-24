@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, Dispatch, SetStateAction} from 'react';
+import React, { createContext, useState, useContext, Dispatch, SetStateAction } from 'react';
 import { Movie, Genre } from '../../services/types';
 
 type FilterContextType = {
@@ -6,18 +6,20 @@ type FilterContextType = {
     page: number;
     genre: number;
     genres: Genre[];
+    selectedGenre: number | null;
+    sortBy: string;
 };
 
 type FilterStateContextType = {
     appState: FilterContextType;
     setAppState: Dispatch<SetStateAction<FilterContextType>>;
     setCurrentPage: (page: number) => void;
+    setSelectedGenre: (genre: number | null) => void;
+    sortMoviesByPopularity: (order: string) => void;
 };
 
 const FilterContext = createContext<FilterStateContextType | null>(null);
 
-
-//const genreIds = [99, 10402, 16, 18, 878, 36];
 
 export const useFilterContext = () => {
     const context = useContext(FilterContext);
@@ -36,8 +38,18 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
         movies: [],
         page: 1,
         genre: 0,
-        genres: []
+        genres: [],
+        selectedGenre: null,
+        sortBy: 'popularity.desc'
     });
+
+    const sortMoviesByPopularity = (order: string) => { 
+        setAppState((prevState) => ({
+            ...prevState,
+            sortBy: order
+        }));
+    }
+
 
     const setCurrentPage = (page: number) => {
         setAppState((prevState) => ({
@@ -46,8 +58,17 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
         }));
     }
 
+    const setSelectedGenre = (genre: number | null) => {
+        setAppState((prevState) => ({
+            ...prevState,
+            selectedGenre: genre
+        }));
+    }
+
+
+
     return (
-        <FilterContext.Provider value={{ appState, setAppState, setCurrentPage }}>
+        <FilterContext.Provider value={{ appState, setAppState, setCurrentPage, setSelectedGenre, sortMoviesByPopularity }}>
             {children}
         </FilterContext.Provider>
     );

@@ -3,14 +3,13 @@ import { Genre } from "../../services/types";
 import { useEffect } from "react";
 import { getGenres } from "../../services/genres-request";
 import { useFilterContext } from "../FilterContext/FilterContext";
-
 type AsideProps = {
   setGenre: (genre: number) => void;
   genre: number;
 };
 
 function Aside({ setGenre, genre }: AsideProps) {
-  const { appState, setAppState } = useFilterContext();
+  const { appState, setAppState, setSelectedGenre, sortMoviesByPopularity } = useFilterContext();
 
   useEffect(() => {
     getGenres(genre)
@@ -22,7 +21,9 @@ function Aside({ setGenre, genre }: AsideProps) {
       })
       .catch((error) => console.error(error));
   }, [genre]);
+
   const genreIds = [36, 10402, 16, 18, 878, 99];
+
   return (
     <aside className="container">
       <div className="cont-title">
@@ -33,9 +34,10 @@ function Aside({ setGenre, genre }: AsideProps) {
           ?.filter((genre: Genre) => genreIds.includes(genre.id))
           .map((genre: Genre, i: number) => (
             <button
-              className="btn"
+              className={appState.selectedGenre === genre.id ? "btn clicked" : "btn"}
               onClick={() => {
                 setGenre(genre.id);
+                setSelectedGenre(genre.id);
               }}
               key={i}
             >
@@ -47,9 +49,8 @@ function Aside({ setGenre, genre }: AsideProps) {
         <h3 className="title">Sort by</h3>
       </div>
       <div className="cont-buttons2">
-        <button className="btn">Title A-Z</button>
-        <button className="btn">Title A-Z</button>
-        <button className="btn">Popularity</button>
+        <button className="btn" onClick={() => sortMoviesByPopularity("popularity.asc")}>Popularity Asc &#8593;</button>
+        <button className="btn" onClick={() => sortMoviesByPopularity("popularity.desc")}>Popularity Desc &#8595;</button>
       </div>
       <div className="cont-search">
         <h3 className="title">Search</h3>

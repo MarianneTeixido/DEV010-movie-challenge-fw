@@ -9,13 +9,9 @@ import { useEffect } from "react";
 import { getGenres } from "../../services/genres-request";
 import { Genre } from "../../services/types";
 
-type AsideProps = {
-  setGenre: (genre: number) => void;
-  genre: number;
-};
 
 export default function Home() {
-  const { appState, setAppState } = useFilterContext();
+  const { appState, setAppState, sortMoviesByPopularity } = useFilterContext();
 
   useEffect(() => {
     getGenres(appState.genre)
@@ -24,10 +20,13 @@ export default function Home() {
           ...prevState,
           genres: genre
         }));
+        sortMoviesByPopularity(appState.sortBy);
       })
       .catch((error) => console.error(error));
-  }, [appState.genre]);
-  console.log("Estos son los géneros", appState.genres);
+  }, [appState.genre, appState.sortBy]);
+
+
+  console.log("Este es el orden", appState.sortBy);
   return (
     <main>
       <AsideComponent
@@ -42,7 +41,6 @@ export default function Home() {
       <div>
         { <HeaderComponent /> }
         <Movies genreId={appState.genre} />
-        {/* <Pagination /> */}
       </div>
     </main>
   );

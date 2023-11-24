@@ -104,9 +104,17 @@
   border: 3px solid #000;
   fill: #fff;
   border-radius: 25px;
-  width: 30%;
+  width: 34%;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.btn.clicked {
+  border: 3px solid #000;
+  background-color: #000;
+  color: #ffffff;
+  border-radius: 25px;
+  width: 34%;
 }
 
 .btn:hover {
