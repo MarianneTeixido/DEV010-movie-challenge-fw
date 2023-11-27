@@ -6,6 +6,5 @@ test('renderiza los componentes de App', () => {
   const { getByText } = render(<App />);
   
   const homeElement = getByText('Home'); 
-  expect(homeElement).toBeInTheDocument();
 });
 

@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Home from './components/Home/Home';
 import MovieDetail from './components/MovieDetail/MovieDetail.tsx';
-// import ErrorPage from './components/ErrorPage/error-page';
+
 import './App.css'
 
 function App() {
