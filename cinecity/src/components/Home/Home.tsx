@@ -11,7 +11,14 @@ import { Genre } from "../../services/types";
 
 
 export default function Home() {
-  const { appState, setAppState, sortMoviesByPopularity } = useFilterContext();
+  const { appState, setAppState, sortMoviesByPopularity, setSelectedSort} = useFilterContext();
+
+  const setSort = (sort: string) => {
+    setAppState(prevState => ({
+      ...prevState,
+      sortBy: sort,
+    }));
+  };
 
   useEffect(() => {
     getGenres(appState.genre)
@@ -36,6 +43,7 @@ export default function Home() {
             genre: genre
           }));
         }}
+        //setSort={setSort} 
         genre={appState.genre}
       />
       <div>

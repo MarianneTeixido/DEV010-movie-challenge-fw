@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.94% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/17</span>
+                <span class='fraction'>9/21</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>1/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/15</span>
+                <span class='fraction'>9/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,19 +111,21 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,6 +135,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,7 +155,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -157,64 +171,68 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-import AsideComponent from '../Aside/Aside';
-import HeaderComponent from '../Header/Header';
-import Movies from '../Movies/Movies';
-import { useFilterContext } from '../FilterContext/FilterContext';
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import AsideComponent from "../Aside/Aside";
+import HeaderComponent from "../Header/Header";
+import Movies from "../Movies/Movies";
+import { useFilterContext } from "../FilterContext/FilterContext";
 &nbsp;
 // import Pagination from '../Pagination/Pagination';
-import './Home.css';
-import { useEffect } from 'react';
-import { getGenres } from '../../services/genres-request';
-import { Movie } from '../../services/types';
-&nbsp;
-&nbsp;
+import "./Home.css";
+import { useEffect } from "react";
+import { getGenres } from "../../services/genres-request";
+import { Genre } from "../../services/types";
 &nbsp;
 &nbsp;
 export default function Home() {
-   const { appState, setAppState } = useFilterContext();
+  const { appState, setAppState, sortMoviesByPopularity, setSelectedSort} = useFilterContext();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >   useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >        getGenres(appState.genre)</span>
-        .then(<span class="fstat-no" title="function not covered" >(m</span>ovie:Movie[]) =&gt; {
-<span class="cstat-no" title="statement not covered" >            setAppState(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-                ...prevState,
-                movies: movie,
-            }));})
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >console.error(error));</span>
-   }, [appState.genre]);
+  const setSort = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>ort: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    setAppState(<span class="fstat-no" title="function not covered" >prevState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span></span>
+      ...prevState,
+      sortBy: sort,
+    }));
+  };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
-        &lt;main&gt;
-            &lt;AsideComponent setGenre={<span class="fstat-no" title="function not covered" >(g</span>enre:number)=&gt;{
-<span class="cstat-no" title="statement not covered" >                setAppState(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-                    ...prevState,
-                    genre: genre,
-                }));
-            }} genre={appState.genre}
-            /&gt;
-            &lt;div&gt;
-                &lt;HeaderComponent /&gt;
-                &lt;Movies  /&gt;
-                {/* &lt;Pagination /&gt; */}
-            &lt;/div&gt;
-        &lt;/main&gt;
-    );
-}
+<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    getGenres(appState.genre)</span>
+      .then(<span class="fstat-no" title="function not covered" >(g</span>enre: Genre[]) =&gt; {
+<span class="cstat-no" title="statement not covered" >        setAppState(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+          ...prevState,
+          genres: genre
+        }));
+<span class="cstat-no" title="statement not covered" >        sortMoviesByPopularity(appState.sortBy);</span>
+      })
+      .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >console.error(error));</span>
+  }, [appState.genre, appState.sortBy]);
 &nbsp;
 &nbsp;
-&nbsp;</pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >  console.log("Este es el orden", appState.sortBy);</span>
+  return (
+    &lt;main&gt;
+      &lt;AsideComponent
+        setGenre={<span class="fstat-no" title="function not covered" >(g</span>enre: number) =&gt; {
+<span class="cstat-no" title="statement not covered" >          setAppState(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+            ...prevState,
+            genre: genre
+          }));
+        }}
+        //setSort={setSort} 
+        genre={appState.genre}
+      /&gt;
+      &lt;div&gt;
+        { &lt;HeaderComponent /&gt; }
+        &lt;Movies genreId={appState.genre} /&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+  );
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-21T16:28:02.345Z
+                at 2023-11-28T17:47:39.600Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

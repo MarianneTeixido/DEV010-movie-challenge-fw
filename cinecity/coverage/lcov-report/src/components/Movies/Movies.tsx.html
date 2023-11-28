@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.88% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/18</span>
+                <span class='fraction'>8/20</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.17% </span>
+                <span class="strong">42.1% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/17</span>
+                <span class='fraction'>8/19</span>
             </div>
         
             
@@ -116,13 +116,22 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,10 +141,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -150,7 +156,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,68 +174,77 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from 'react';
-import { buildApiUrl, API_KEY } from '../../services/movie-request';
-import { Movie } from '../../services/types';
-import Pagination from '../Pagination/Pagination';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from "react";
+import { buildApiUrl, API_KEY } from "../../services/movie-request";
+import { Movie } from "../../services/types";
+import Pagination from "../Pagination/Pagination";
 import "./Movies.css";
 import "../Pagination/Pagination.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useFilterContext } from "../FilterContext/FilterContext";
 &nbsp;
 &nbsp;
+type MovieProps = {
+  genreId: number;
+};
 &nbsp;
-function <span class="fstat-no" title="function not covered" >Movies() {</span>
-<span class="cstat-no" title="statement not covered" >    console.log('renderizando movies')</span>
-    //movies es la data
-    const [movies, setMovies] = <span class="cstat-no" title="statement not covered" >useState&lt;Movie[]&gt;([]);</span>
-    const [currentPage, setCurrentPage] = <span class="cstat-no" title="statement not covered" >useState&lt;number&gt;(1);</span>
+function <span class="fstat-no" title="function not covered" >Movies({</span> genreId }: MovieProps) {
+<span class="cstat-no" title="statement not covered" >  console.log("renderizando movies");</span>
 &nbsp;
-    //Permite hacer la petición HTTP
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-//buildApi debe de recibir el filtro por género
-        
-        const apiUrl = <span class="cstat-no" title="statement not covered" >buildApiUrl(currentPage, 28);</span>
+   const { appState, setMovies } = <span class="cstat-no" title="statement not covered" >useFilterContext();</span>
+   const { movies } = <span class="cstat-no" title="statement not covered" >appState;</span>
 &nbsp;
-        const options = <span class="cstat-no" title="statement not covered" >{</span>
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization: API_KEY,
-            }
-        };
-<span class="cstat-no" title="statement not covered" >        fetch(apiUrl, options)</span>
-            .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
-            .then(<span class="fstat-no" title="function not covered" >(m</span>ovies) =&gt; <span class="cstat-no" title="statement not covered" >setMovies(movies.results));</span>
-    }, [currentPage]);
+<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+    const apiUrl = <span class="cstat-no" title="statement not covered" >buildApiUrl(appState.page, genreId, appState.sortBy);</span>
 &nbsp;
-    return (
-        &lt;&gt;
-            &lt;section className='container-movies'  &gt;
-                {movies.map(<span class="fstat-no" title="function not covered" >(m</span>ovie: Movie, i: number) =&gt;
-<span class="cstat-no" title="statement not covered" >                    &lt;div className='movie-item' key={i}&gt;</span>
-                        &lt;Link to={`/movie/${movie.id}`}&gt;
-                        &lt;img className='img' src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`} alt={movie.original_title} /&gt;
-                        &lt;/Link&gt;
-                        &lt;h3&gt;{movie.title}&lt;/h3&gt;
-                        &lt;p&gt;{new Date(movie.release_date).getFullYear()}&lt;/p&gt;
-                    &lt;/div&gt;
-                )}
-            &lt;/section&gt;
-            &lt;Pagination page={currentPage} setCurrentPage={setCurrentPage} /&gt;
-        &lt;/&gt;
-    )
+    const options = <span class="cstat-no" title="statement not covered" >{</span>
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: API_KEY
+      }
+    };
+<span class="cstat-no" title="statement not covered" >    fetch(apiUrl, options)</span>
+      .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+      .then(<span class="fstat-no" title="function not covered" >(m</span>ovies) =&gt; <span class="cstat-no" title="statement not covered" >setMovies(movies.results));</span>
+  }, [appState.page, genreId]);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;&gt;
+      &lt;section className="container-movies"&gt;
+        {movies.map(<span class="fstat-no" title="function not covered" >(m</span>ovie: Movie, i: number) =&gt; (
+<span class="cstat-no" title="statement not covered" >          &lt;div className="movie-item" key={i}&gt;</span>
+            &lt;Link to={`/movie/${movie.id}`}&gt;
+              &lt;img
+                className="img"
+                src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
+                alt={movie.original_title}
+              /&gt;
+            &lt;/Link&gt;
+            &lt;h3&gt;{movie.title}&lt;/h3&gt;
+            &lt;p&gt;{new Date(movie.release_date).getFullYear()}&lt;/p&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/section&gt;
+      &lt;Pagination /&gt;
+    &lt;/&gt;
+&nbsp;
+  );
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default M</span>ovies;
-&nbsp;</pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >export default M</span>ovies;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-21T16:28:02.345Z
+                at 2023-11-28T17:47:39.600Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

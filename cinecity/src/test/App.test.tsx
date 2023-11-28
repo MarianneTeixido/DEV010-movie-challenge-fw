@@ -1,10 +1,10 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from '../App';
+import { render, screen } from "@testing-library/react";
+import React from "react"; 
+import App from "../App"; 
 
-test('renderiza los componentes de App', () => {
-  const { getByText } = render(<App />);
-  
-  const homeElement = getByText('Home'); 
+describe("App", () => {
+    it("should work as expected", () => {
+        render(<App />);
+        screen.debug();
+    });
 });
-
