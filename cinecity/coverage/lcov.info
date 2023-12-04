@@ -129,12 +129,12 @@ TN:
 SF:src/components/Header/Header.tsx
 FN:5,(anonymous_2)
 FNF:1
-FNH:0
-FNDA:0,(anonymous_2)
+FNH:1
+FNDA:5,(anonymous_2)
 DA:1,2
 DA:2,2
 DA:5,2
-DA:128,2
+DA:125,2
 LF:4
 LH:4
 BRF:0

@@ -56,7 +56,7 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
             movies: movies
         }));
     }
-    
+    //cambiar a setSortBy
     const sortMoviesByPopularity = (order: string) => { 
         setAppState((prevState) => ({
             ...prevState,

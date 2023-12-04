@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701193659618" clover="3.2.0">
-  <project timestamp="1701193659618" name="All files">
-    <metrics statements="139" coveredstatements="69" conditionals="17" coveredconditionals="2" methods="59" coveredmethods="14" elements="215" coveredelements="85" complexity="0" loc="139" ncloc="139" packages="9" files="11" classes="11"/>
+<coverage generated="1701268411207" clover="3.2.0">
+  <project timestamp="1701268411207" name="All files">
+    <metrics statements="139" coveredstatements="69" conditionals="17" coveredconditionals="2" methods="59" coveredmethods="15" elements="215" coveredelements="86" complexity="0" loc="139" ncloc="139" packages="9" files="11" classes="11"/>
     <package name="src">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="/home/lxow/git/LABORATORIA/DEV010-movie-challenge-fw/cinecity/src/App.tsx">
@@ -68,13 +68,13 @@
       </file>
     </package>
     <package name="src.components.Header">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Header.tsx" path="/home/lxow/git/LABORATORIA/DEV010-movie-challenge-fw/cinecity/src/components/Header/Header.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="128" count="2" type="stmt"/>
+        <line num="125" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Home">

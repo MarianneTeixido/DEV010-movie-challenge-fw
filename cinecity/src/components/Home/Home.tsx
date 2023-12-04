@@ -43,7 +43,7 @@ export default function Home() {
             genre: genre
           }));
         }}
-        //setSort={setSort} 
+      setSort={setSort} 
         genre={appState.genre}
       />
       <div>
