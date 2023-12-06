@@ -5,7 +5,7 @@ import Pagination from "../Pagination/Pagination";
 import "./Movies.css";
 import "../Pagination/Pagination.css";
 import { Link } from "react-router-dom";
-import { useFilterContext } from "../FilterContext/FilterContext";
+import { useFilterContext } from "../../FilterContext";
 
 
 type MovieProps = {

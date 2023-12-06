@@ -2,14 +2,15 @@ import "./Aside.css";
 import { Genre } from "../../services/types";
 import { useEffect } from "react";
 import { getGenres } from "../../services/genres-request";
-import { useFilterContext } from "../FilterContext/FilterContext";
+import { useFilterContext } from "../../FilterContext";
+
 type AsideProps = {
   setGenre: (genre: number) => void;
   genre: number;
 };
 
 function Aside({ setGenre, genre }: AsideProps) {
-  const { appState, setAppState, sortMoviesByPopularity, setSelectedGenre, setSelectedSort } = useFilterContext();
+  const { appState, setAppState, setSortMovies, setSelectedGenre, setSelectedSort } = useFilterContext();
 
   useEffect(() => {
     getGenres(genre)
@@ -23,6 +24,7 @@ function Aside({ setGenre, genre }: AsideProps) {
   }, [genre]);
 
   const genreIds = [36, 10402, 16, 18, 878, 99];
+
 
   return (
     <aside className="container">
@@ -52,13 +54,13 @@ function Aside({ setGenre, genre }: AsideProps) {
         <button 
         className={appState.selectedSort === "popularity.desc" ? "btn clicked" : "btn"}       
         onClick={() => {
-          sortMoviesByPopularity("popularity.desc");
+          setSortMovies("popularity.desc");
           setSelectedSort("popularity.desc");
         }}>Popularity Desc &#8595;</button>
         <button         
         className={appState.selectedSort === "popularity.asc" ? "btn clicked" : "btn"}
         onClick={() => {
-          sortMoviesByPopularity("popularity.asc");
+          setSortMovies("popularity.asc");
           setSelectedSort("popularity.asc");
         }}>Popularity Asc &#8593;</button>
       </div>
@@ -67,8 +69,10 @@ function Aside({ setGenre, genre }: AsideProps) {
       </div>
       <div className="cont-buttons3">
         <span>
-          <input placeholder="Search here"></input>
-          <button className="btn-go">Go</button>
+          <input 
+          placeholder="Search here"
+          ></input>
+          <button className="btn-go" >Go</button>
         </span>
       </div>
       <div className="cont-footer">
