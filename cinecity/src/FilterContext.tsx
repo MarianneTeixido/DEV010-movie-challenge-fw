@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, Dispatch, SetStateAction } from 'react';
-import { Movie, Genre } from '../../services/types';
+import { Movie, Genre } from './services/types';
 
 type FilterContextType = {
     movies: Movie[];
@@ -10,18 +10,19 @@ type FilterContextType = {
 
     selectedGenre: number | null;
     selectedSort: string;
+    urlApi: string;
 };
 
 type FilterStateContextType = {
     appState: FilterContextType;
     setAppState: Dispatch<SetStateAction<FilterContextType>>;
     setCurrentPage: (page: number) => void;
-    sortMoviesByPopularity: (order: string) => void;
+    setSortMovies: (order: string) => void;
     setMovies: (movies: Movie[]) => void;
 
     setSelectedGenre: (genre: number | null) => void;
     setSelectedSort: (sort: string) => void;
-    
+    setUrlApi: (url: string) => void;
 };
 
 const FilterContext = createContext<FilterStateContextType | null>(null);
@@ -48,6 +49,7 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
         sortBy: 'popularity.desc',
         selectedGenre: null,
         selectedSort: 'popularity.desc',
+        urlApi: 'https://api.themoviedb.org/3/discover/movie?api_key=0a0e1e1b0b0c0d0e0f0a0b0c0d0e0f0a&language=en-US',
     });
 
     const setMovies = (movies: Movie[]) => { 
@@ -57,7 +59,7 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
         }));
     }
     
-    const sortMoviesByPopularity = (order: string) => { 
+    const setSortMovies = (order: string) => { 
         setAppState((prevState) => ({
             ...prevState,
             sortBy: order
@@ -85,11 +87,15 @@ export const FilterContextProvider = ({ children }: FilterContextProviderProps) 
             selectedSort: sort
         }));
     }
-   
-
+    const setUrlApi = (url: string) => {
+        setAppState((prevState) => ({
+            ...prevState,
+            urlApi: url
+        }));    
+    }
 
     return (
-        <FilterContext.Provider value={{ appState, setAppState, setMovies,setCurrentPage, sortMoviesByPopularity, setSelectedGenre, setSelectedSort }}>
+        <FilterContext.Provider value={{ appState, setAppState, setMovies,setCurrentPage, setSortMovies, setSelectedGenre, setSelectedSort, setUrlApi }}>
             {children}
         </FilterContext.Provider>
     );

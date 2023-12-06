@@ -1,4 +1,4 @@
-import { useFilterContext } from '../FilterContext/FilterContext';
+import { useFilterContext } from '../../FilterContext';
 import './Pagination.css'
 
 function Pagination() {
