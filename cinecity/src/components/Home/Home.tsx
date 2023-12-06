@@ -58,8 +58,8 @@ export default function Home() {
 
   //   return () => subscription.unsubscribe();
   // }, [appState.genre, appState.sortBy, setAppState, setSortMovies]);
-
-  console.log("Este es el orden", appState.sortBy);
+  //console.log("Este es el orden", appState.sortBy);
+  
   return (
     <main>
       <AsideComponent
