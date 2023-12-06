@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { buildApiUrl, API_KEY } from "../../services/movie-request";
+
 import { Movie } from "../../services/types";
 import Pagination from "../Pagination/Pagination";
 import "./Movies.css";
@@ -15,23 +14,8 @@ type MovieProps = {
 function Movies({ genreId }: MovieProps) {
   console.log("renderizando movies");
 
-   const { appState, setMovies } = useFilterContext();
+   const { appState } = useFilterContext();
    const { movies } = appState;
-
-  useEffect(() => {
-    const apiUrl = buildApiUrl(appState.page, genreId, appState.sortBy);
-
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: API_KEY
-      }
-    };
-    fetch(apiUrl, options)
-      .then((response) => response.json())
-      .then((movies) => setMovies(movies.results));
-  }, [appState.page, genreId]);
 
   return (
     <>
