@@ -2,9 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../App';
 
-test('renderiza los componentes de App', () => {
-  const { getByText } = render(<App />);
-  
-  const homeElement = getByText('Home'); 
+describe('App', () => {
+  it('renders Home component for "/" route', () => {
+    render(<App />);
+    expect(screen.getByText(/Home/i)).toBeInTheDocument();
+  });
 });
 
