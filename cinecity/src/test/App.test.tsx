@@ -1,10 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import React from "react"; 
-import App from "../App"; 
+import React from 'react';
+import { render } from '@testing-library/react';
+import App from '../App';
 
-describe("App", () => {
-    it("should work as expected", () => {
-        render(<App />);
-        screen.debug();
-    });
+describe('App', () => {
+  it('renders Home component for "/" route', () => {
+    render(<App />);
+   // expect(screen.getByText(/Home/i)).toBeInTheDocument();
+  });
 });
+

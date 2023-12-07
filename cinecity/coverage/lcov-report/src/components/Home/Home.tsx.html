@@ -23,9 +23,15 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">42.85% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>9/21</span>
+=======
+                <span class="strong">77.77% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>7/9</span>
+>>>>>>> main
             </div>
         
             
@@ -37,16 +43,28 @@
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">11.11% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>1/9</span>
+=======
+                <span class="strong">33.33% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/3</span>
+>>>>>>> main
             </div>
         
             
             <div class='fl pad1y space-right2'>
+<<<<<<< HEAD
                 <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>9/18</span>
+=======
+                <span class="strong">87.5% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>7/8</span>
+>>>>>>> main
             </div>
         
             
@@ -90,6 +108,7 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
+<<<<<<< HEAD
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
@@ -136,24 +155,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+=======
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+>>>>>>> main
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<<<<<<< HEAD
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+=======
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+>>>>>>> main
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,10 +179,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<<<<<<< HEAD
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,9 +204,17 @@ import "./Home.css";
 import { useEffect } from "react";
 import { getGenres } from "../../services/genres-request";
 import { Genre } from "../../services/types";
+=======
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import AsideComponent from "../Aside/Aside";
+import HeaderComponent from "../Header/Header";
+import Movies from "../Movies/Movies";
+import { useFilterContext } from "../../FilterContext";
+>>>>>>> main
 &nbsp;
+import "./Home.css";
 &nbsp;
 export default function Home() {
+<<<<<<< HEAD
   const { appState, setAppState, sortMoviesByPopularity, setSelectedSort} = useFilterContext();
 &nbsp;
   const setSort = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>ort: string) =&gt; {</span>
@@ -207,6 +238,10 @@ export default function Home() {
 &nbsp;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  console.log("Este es el orden", appState.sortBy);</span>
+=======
+  const { appState, setAppState} = useFilterContext();
+&nbsp;
+>>>>>>> main
   return (
     &lt;main&gt;
       &lt;AsideComponent
@@ -216,11 +251,18 @@ export default function Home() {
             genre: genre
           }));
         }}
+<<<<<<< HEAD
       setSort={setSort} 
         genre={appState.genre}
       /&gt;
       &lt;div&gt;
         { &lt;HeaderComponent /&gt; }
+=======
+        genre={appState.genre}
+      /&gt;
+      &lt;div&gt;
+        {&lt;HeaderComponent /&gt;}
+>>>>>>> main
         &lt;Movies genreId={appState.genre} /&gt;
       &lt;/div&gt;
     &lt;/main&gt;
@@ -232,7 +274,11 @@ export default function Home() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+<<<<<<< HEAD
                 at 2023-11-29T14:33:31.192Z
+=======
+                at 2023-12-06T17:55:56.661Z
+>>>>>>> main
             </div>
         <script src="../../../prettify.js"></script>
         <script>

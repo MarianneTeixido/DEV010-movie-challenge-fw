@@ -10,3 +10,9 @@ test('Header renders with logo image', () => {
     expect(logoImage.src).toContain('/assets/logo.png'); 
 });
 
+
+describe('Examples', () => {
+it('should be a teapot', () => {
+});
+});
+
