@@ -52,6 +52,8 @@ TypeScript was the primary programming language used to write the frontend code.
 
 ## 3. Design and prototype
 
+
+
 ### Color palette
 
 ### Fonts

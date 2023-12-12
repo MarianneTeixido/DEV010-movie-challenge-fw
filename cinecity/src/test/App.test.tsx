@@ -5,7 +5,7 @@ import App from '../App';
 describe('App', () => {
   it('renders Home component for "/" route', () => {
     render(<App />);
-   // expect(screen.getByText(/Home/i)).toBeInTheDocument();
+    //expect(screen.getByText(/Home/i)).toBeInTheDocument();
   });
 });
 
