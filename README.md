@@ -52,17 +52,40 @@ TypeScript was the primary programming language used to write the frontend code.
 
 ## 3. Design and prototype
 
+The combination of color palette and typefaces in Cinecity seeks to achieve a clean, simple, minimalist and user-friendly look.  The green color brings energy to draw the user to the key elements of the app, while the black and white colors maintain legibility and simplicity. The choice of typefaces balances style with clarity, ensuring the website is attractive and functional.
+
 ### Color palette
 
 Cinecity's design is characterized by the use of monochromatic colors with a touch of vibrant green that provides a modern, clean and simple user experience.
 
-![color-palette](assets/colorpalette.png)
+![color-palette](assets/colorpalette.jpeg)
 
 ### Fonts
 
+Cinecity uses [Inter](https://fonts.google.com/specimen/Inter) typography selected to achieve a balance between legibility and style. 
+
 ### Figma Prototype
 
+A high fidelity desktop prototype was designed to anticipate the user experience. Design available here: [Figma Interactive Mobile Prototype](https://www.figma.com/proto/kTJrCzbPjF297eXNZSBqbg/cinecity?node-id=10-49&scaling=scale-down&page-id=0%3A1&mode=design&t=yhiRWCrzTZVwxCE8-1)
+
+![color-palette](assets/prototype01.png)
+
+![color-palette](assets/prototype02.png)
+
+Web version of the high-fidelity prototype design:
+
+![color-palette](assets/final01.png)
+
+![color-palette](assets/final02.png)
+
 ## 4. Planned Features
+
+This desktop app is a first version and is in the process of improving the experience. Future versions will add exciting enhancements such as; 
+
+- Responsive version. 
+- Numeric pagination.
+- User profiles.
+- Playlists. 
 
 ## 5. Credits
 
@@ -70,4 +93,4 @@ Project developed by Marianne Teixidó as part of the web development bootcamp i
 
 ## 6. License 
 
-GNU General Public License v3.0
+[GNU General Public License v3.0]()

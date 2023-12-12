@@ -6,7 +6,7 @@ import { useFilterContext } from "../../FilterContext";
 import "./Home.css";
 
 export default function Home() {
-  const { appState, setAppState} = useFilterContext();
+  const { appState, setAppState } = useFilterContext();
 
   return (
     <main>
