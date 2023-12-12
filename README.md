@@ -1,4 +1,5 @@
-# C I N E C I T Y
+![cinecity](cinecity/src/assets/banner.png)
+
 
 Cinecity is a web application that allows you to view, sort and filter a film catalog using the API from [The Movie Database](https://developer.themoviedb.org/docs). The design of the interface, search and ordering is inspired by websites focused on author cine programming and art cine such as the page of the [Cineteca Nacional](https://www.cinetecanacional.net/#gsc.tab=0) y [Ambulante](https://www.ambulante.org/).
 
