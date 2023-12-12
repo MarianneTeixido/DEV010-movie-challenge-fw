@@ -54,6 +54,10 @@ TypeScript was the primary programming language used to write the frontend code.
 
 ### Color palette
 
+Cinecity's design is characterized by the use of monochromatic colors with a touch of vibrant green that provides a modern, clean and simple user experience.
+
+![color-palette](assets/colorpalette.png)
+
 ### Fonts
 
 ### Figma Prototype

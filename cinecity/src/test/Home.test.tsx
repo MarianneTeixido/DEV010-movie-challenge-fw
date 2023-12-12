@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+// import { render, screen } from "@testing-library/react";
 
-import  Home from "../components/Home/Home";
+// import  Home from "../components/Home/Home";
 
 describe("Examples", () => {
   it("should be a teapot", () => {
