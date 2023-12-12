@@ -58,7 +58,7 @@ The combination of color palette and typefaces in Cinecity seeks to achieve a cl
 
 Cinecity's design is characterized by the use of monochromatic colors with a touch of vibrant green that provides a modern, clean and simple user experience.
 
-![color-palette](assets/colorpalette.jpeg)
+![color-palette](cinecity/src/assets/color-palette.jpeg)
 
 ### Fonts
 
@@ -68,15 +68,15 @@ Cinecity uses [Inter](https://fonts.google.com/specimen/Inter) typography select
 
 A high fidelity desktop prototype was designed to anticipate the user experience. Design available here: [Figma Interactive Mobile Prototype](https://www.figma.com/proto/kTJrCzbPjF297eXNZSBqbg/cinecity?node-id=10-49&scaling=scale-down&page-id=0%3A1&mode=design&t=yhiRWCrzTZVwxCE8-1)
 
-![color-palette](assets/prototype01.png)
+![color-palette](cinecity/src/assets/prototype01.png)
 
-![color-palette](assets/prototype02.png)
+![color-palette](cinecity/src/assets/prototype02.png)
 
 Web version of the high-fidelity prototype design:
 
-![color-palette](assets/final01.png)
+![color-palette](cinecity/src/assets/final01.png)
 
-![color-palette](assets/final02.png)
+![color-palette](cinecity/src/assets/final02.png)
 
 ## 4. Planned Features
 
@@ -93,4 +93,4 @@ Project developed by Marianne Teixidó as part of the web development bootcamp i
 
 ## 6. License 
 
-[GNU General Public License v3.0]()
+[GNU General Public License v3.0](LICENSE.MD)
