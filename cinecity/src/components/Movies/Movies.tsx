@@ -7,11 +7,7 @@ import { Link } from "react-router-dom";
 import { useFilterContext } from "../../FilterContext";
 
 
-type MovieProps = {
-  genreId: number;
-};
-
-function Movies({ genreId }: MovieProps) {
+function Movies() {
   console.log("renderizando movies");
 
    const { appState } = useFilterContext();

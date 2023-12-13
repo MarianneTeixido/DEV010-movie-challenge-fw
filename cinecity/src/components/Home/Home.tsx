@@ -21,7 +21,7 @@ export default function Home() {
       />
       <div>
         {<HeaderComponent />}
-        <Movies genreId={appState.genre} />
+        <Movies />
       </div>
     </main>
   );
